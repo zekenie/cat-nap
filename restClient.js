@@ -6,16 +6,15 @@ jsonFetch.config({
 
 const symbols = {
   paths: Symbol('paths'),
-  getters: Symbol('getters'),
   dirtyList: Symbol('dirtyList')
 };
 
 class RestClient {
-  constructor(obj) {
-    // Object.assign(this, obj);
+  constructor(obj) {    
     // this is a private hashmap of strings for a path to their symbols
     this[symbols.paths] = new Map();
-    this[symbols.getters] = new Map();
+
+    // set of paths that have changed
     this[symbols.dirtyList] = new Set();
     this.buildSchema();
     this.merge(obj);
