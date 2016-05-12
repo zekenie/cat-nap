@@ -20,6 +20,7 @@ class RestClient {
     this.merge(obj);
   }
 
+  // this will be private
   addPath(path, schemaPath) {
     const sym = Symbol(path);
     this[symbols.paths].set(path, sym);
@@ -47,6 +48,7 @@ class RestClient {
       });
   }
 
+  // this will be private
   buildSchema() {
     for(let [path, schemaPath] of this.constructor.schema) {
       this.addPath(path, schemaPath);
@@ -79,13 +81,6 @@ class RestClient {
     return startingValue;
   }
 
-  // map(fn) {
-  //   return this.reduce((previous, strKey, current) => fn(strKey, current));
-  // }
-
-  forEach(fn) {
-    this.map(fn.bind(this));
-  }
 
   update(changes={}) {
     this.merge(changes)
@@ -98,11 +93,13 @@ class RestClient {
     return this.constructor.delete(this.url);
   }
 
+  // this will be private
   static buildFromArray(arr) {
     console.log(arr);
     return arr.map(this.buildFromObj.bind(this));
   }
 
+  // this will be private
   static buildFromObj(obj) {
     return new this(obj);
   }
