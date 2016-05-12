@@ -1,4 +1,7 @@
+
 'use strict';
+
+const fetch = require('./fetch').fetch;
 
 const defaults = {
   credentials: 'same-origin',
@@ -17,13 +20,13 @@ const jsonFetch = (url, options={}) => {
     .then(res => res.json());
 };
 
-jsonFetch.config = overrides => {
+exports.config = overrides => {
   Object.assign(defaults, overrides);
 };
 
 ['get', 'post', 'put', 'delete'].reduce((exports, method) => {
-  exports[method] = (url, options) => {
-    options.method = method.toUpperCase();
+  exports[method] = (url, options={}) => {
+    options[method] = method.toUpperCase();
     return jsonFetch(url, options);
   }
   return exports;
