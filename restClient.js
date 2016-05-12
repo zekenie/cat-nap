@@ -55,8 +55,12 @@ class RestClient {
     }
   }
 
+  get primaryIdentifier() {
+    return this[this.constructor.schema.primary];
+  }
+
   get url() {
-    return this.constructor.path + '/' + this[this.constructor.schema.primary]
+    return this.constructor.path + '/' + this.primaryIdentifier;
   }
 
   get dirtyValues() {
@@ -83,6 +87,7 @@ class RestClient {
 
 
   update(changes={}) {
+    if(!this.primaryIdentifier) { throw new Error('cannot update document without id'); }
     this.merge(changes)
     const diff = this.dirtyValues;
     this.dirtyList.clear();

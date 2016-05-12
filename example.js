@@ -3,7 +3,7 @@ const jsonFetch = require('./jsonFetch');
 
 jsonFetch.config({
   headers: {
-    Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NDdkZWJkNWU3M2M3MDBiMDA5NTk4ZWQiLCJpYXQiOjE0NjI1NzIxMTIsImV4cCI6MTQ2MzE3NjkxMn0.Re4VCn9Q1ZhYLRXP3DNJg5k3iEUmocfP8DjLlOvta8E'
+    Authorization: 'Bearer foobar.foobar.foobar'
   }
 });
 
