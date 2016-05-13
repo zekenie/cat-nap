@@ -9,6 +9,35 @@ const symbols = {
   dirtyList: Symbol('dirtyList')
 };
 
+/** Private instance methods */
+const addPath = function(path, schemaPath) {
+  const sym = Symbol(path);
+  this[symbols.paths].set(path, sym);
+  Object.defineProperty(this, path, {
+    get: () => {
+      return this[sym];
+    }
+  });
+};
+
+const buildSchema = function() {
+  for(let [path, schemaPath] of this.constructor.schema) {
+    addPath.call(this, path, schemaPath);
+  }
+}
+/** /end private instance methods */
+
+/** private statics */
+const buildFromArray = function(arr) {
+  return arr.map(buildFromObj.bind(this));
+};
+
+
+const buildFromObj = function(obj) {
+  return new this(obj);
+};
+/** end private statics */
+
 class RestClient {
   constructor(obj) {    
     // this is a private hashmap of strings for a path to their symbols
@@ -16,20 +45,8 @@ class RestClient {
 
     // set of paths that have changed
     this[symbols.dirtyList] = new Set();
-    this.buildSchema();
+    buildSchema.call(this);
     this.merge(obj);
-  }
-
-  // this will be private
-  addPath(path, schemaPath) {
-    const sym = Symbol(path);
-    this[symbols.paths].set(path, sym);
-    Object.defineProperty(this, path, {
-      get: () => {
-        return this[sym];
-      }
-    });
-    
   }
 
   merge(changes) {
@@ -37,23 +54,18 @@ class RestClient {
       .forEach(key => {
         const change = changes[key];
         let keySym = this[symbols.paths].get(key);
-        if(!keySym && ) {
+        if(!keySym) {
           if(!this.constructor.schema.strict) {
-            this.addPath(key);
+            addPath.call(this,key);
             keySym = this[symbols.paths].get(key);
           } else { return; }
         }
         this[keySym] = change;
         this[symbols.dirtyList].add(keySym)
       });
+    return this;
   }
 
-  // this will be private
-  buildSchema() {
-    for(let [path, schemaPath] of this.constructor.schema) {
-      this.addPath(path, schemaPath);
-    }
-  }
 
   get primaryIdentifier() {
     return this[this.constructor.schema.primary];
@@ -85,43 +97,38 @@ class RestClient {
     return startingValue;
   }
 
-
   update(changes={}) {
-    if(!this.primaryIdentifier) { throw new Error('cannot update document without id'); }
-    this.merge(changes)
+    if(!this.primaryIdentifier) { throw new Error('cannot update document without id. try calling create'); }
+    this.merge(changes);
     const diff = this.dirtyValues;
     this.dirtyList.clear();
-    return this.constructor.put(this.url, { body: diff });
+    return this.constructor.put(this.url, { body: diff })
+      .then(resp => this.merge(resp));
+  }
+
+  create() {
+    if(!!this.primaryIdentifier) { throw new Error('cannot recreate document that already has identifier'); }
+    return this.constructor.create(this.values)
+      .then(resp => this.merge(resp))
   }
 
   delete() {
     return this.constructor.delete(this.url);
   }
 
-  // this will be private
-  static buildFromArray(arr) {
-    console.log(arr);
-    return arr.map(this.buildFromObj.bind(this));
-  }
-
-  // this will be private
-  static buildFromObj(obj) {
-    return new this(obj);
-  }
-
   static find(query) {
     return jsonFetch.get(this.path)
-      .then(this.buildFromArray.bind(this));
+      .then(buildFromArray.bind(this));
   }
 
   static findById(id) {
     return jsonFetch.get(`${this.path}/${id}`)
-      .then(this.buildFromObj.bind(this));
+      .then(buildFromObj.bind(this));
   }
 
   static create(obj) {
     return jsonFetch.post(this.path, { body: obj })
-      .then(this.buildFromObj.bind(this));
+      .then(buildFromObj.bind(this));
   }
 }
 

@@ -26,7 +26,8 @@ exports.config = overrides => {
 
 ['get', 'post', 'put', 'delete'].reduce((exports, method) => {
   exports[method] = (url, options={}) => {
-    options[method] = method.toUpperCase();
+    options.method = method.toUpperCase();
+    console.log(options)
     return jsonFetch(url, options);
   }
   return exports;
