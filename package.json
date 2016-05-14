@@ -13,6 +13,7 @@
     "sinon": "^1.17.4"
   },
   "dependencies": {
+    "inflection": "^1.10.0",
     "lodash": "^4.12.0",
     "node-fetch": "^1.5.2",
     "whatwg-fetch": "^1.0.0"

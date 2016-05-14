@@ -1,5 +1,7 @@
 const jsonFetch = require('./jsonFetch');
+const inflection = require('inflection');
 const _ = require('lodash');
+
 jsonFetch.config({
   credentials: 'include'
 });
@@ -28,18 +30,19 @@ const buildSchema = function() {
 /** /end private instance methods */
 
 /** private statics */
-const buildFromArray = function(arr) {
+const buildFromArray = function(arr, parent) {
   return arr.map(buildFromObj.bind(this));
 };
 
 
-const buildFromObj = function(obj) {
-  return new this(obj);
+const buildFromObj = function(obj, parent) {
+  return new this(obj, parent);
 };
 /** end private statics */
 
 class RestClient {
-  constructor(obj) {    
+  constructor(obj, parent) {
+    this.parent = parent;    
     // this is a private hashmap of strings for a path to their symbols
     this[symbols.paths] = new Map();
 
@@ -71,8 +74,16 @@ class RestClient {
     return this[this.constructor.schema.primary];
   }
 
+  get parentUrl() {
+    return this.parent.url || this.constructor.path;
+  }
+
   get url() {
-    return this.constructor.path + '/' + this.primaryIdentifier;
+    const subRoute = this.constructor.parents.get(this.parent.constructor);
+
+    return [this.parentUrl,subRoute,this.primaryIdentifier]
+      .filter(part => !!part)
+      .join('/');
   }
 
   get dirtyValues() {
@@ -116,19 +127,46 @@ class RestClient {
     return this.constructor.delete(this.url);
   }
 
-  static find(query) {
+  static find(query={}) {
+    if(!!this.parent) {
+      throw new Error(`cannot find on nested route`)
+    }
     return jsonFetch.get(this.path)
       .then(buildFromArray.bind(this));
   }
 
   static findById(id) {
+    if(!!this.parent) {
+      throw new Error(`cannot find by id on nested route`)
+    }
     return jsonFetch.get(`${this.path}/${id}`)
       .then(buildFromObj.bind(this));
   }
 
-  static create(obj) {
+  static create(obj={}) {
+    if(!!this.parent) {
+      throw new Error(`cannot create ${this.name} with create method because ${this.name} is a subclass. call create from a parent.`)
+    }
     return jsonFetch.post(this.path, { body: obj })
       .then(buildFromObj.bind(this));
+  }
+
+  static nest(otherClass, route) {
+    route = route || inflection.pluralize(otherClass.name).toLowerCase();
+    // parents is a map of the class to its mounted route
+    otherClass.parents = otherClass.parents || new Map();
+    otherClass.parents.set(this, route);
+
+    const name = inflection.pluralize(otherClass.name);
+    this.prototype[`get${name}`] = function() {
+      jsonFetch.get(`${this.url}/${route}`)
+        .then(resArr => buildFromArray.call(otherClass, resArr, this));
+    };
+
+    this.prototype[`create${name}`] = function(obj={}) {
+      jsonFetch.post(`${this.url}/${route}`)
+        .then(res => buildFromObject.call(otherClass, res, this))
+    }
   }
 }
 
