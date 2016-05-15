@@ -164,15 +164,16 @@ class RestClient {
     otherClass.parents = otherClass.parents || new Map();
     otherClass.parents.set(this, route);
 
-    const name = inflection.pluralize(otherClass.name);
-    this.prototype[`get${name}`] = function() {
+    const pluralName = inflection.pluralize(otherClass.name);
+    const singularName = otherClass.name;
+    this.prototype[`get${pluralName}`] = function() {
       return jsonFetch.get(`${this.url}/${route}`)
         .then(resArr => buildFromArray.call(otherClass, resArr, this));
     };
 
-    this.prototype[`create${name}`] = function(obj={}) {
-      return jsonFetch.post(`${this.url}/${route}`)
-        .then(res => buildFromObject.call(otherClass, res, this))
+    this.prototype[`create${singularName}`] = function(obj={}) {
+      return jsonFetch.post(`${this.url}/${route}`, { body: obj })
+        .then(res => buildFromObj.call(otherClass, res, this))
     }
   }
 }
