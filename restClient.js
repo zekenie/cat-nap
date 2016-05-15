@@ -75,11 +75,18 @@ class RestClient {
   }
 
   get parentUrl() {
-    return this.parent.url || this.constructor.path;
+    if(this.parent) {
+      return this.parent.url;
+    } else {
+      return this.constructor.path;
+    }
   }
 
   get url() {
-    const subRoute = this.constructor.parents.get(this.parent.constructor);
+    let subRoute;
+    if(this.constructor.parents) {
+      subroute = this.constructor.parents.get(this.parent.constructor);
+    }
 
     return [this.parentUrl,subRoute,this.primaryIdentifier]
       .filter(part => !!part)
@@ -159,12 +166,12 @@ class RestClient {
 
     const name = inflection.pluralize(otherClass.name);
     this.prototype[`get${name}`] = function() {
-      jsonFetch.get(`${this.url}/${route}`)
+      return jsonFetch.get(`${this.url}/${route}`)
         .then(resArr => buildFromArray.call(otherClass, resArr, this));
     };
 
     this.prototype[`create${name}`] = function(obj={}) {
-      jsonFetch.post(`${this.url}/${route}`)
+      return jsonFetch.post(`${this.url}/${route}`)
         .then(res => buildFromObject.call(otherClass, res, this))
     }
   }
