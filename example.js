@@ -1,29 +1,56 @@
 'use strict';
-const jsonFetch = require('./jsonFetch');
 
-jsonFetch.config({
-  headers: {
-    Authorization: 'Bearer foobar.foobar.foobar'
-  }
-});
+global.fetch = require('node-fetch');
 
-const RestClient = require('./restClient');
+const Server = require('./server');
+const server = new Server('http://localhost:4001');
+// server.config({
+//   headers: {
+//     Authorization: 'Bearer foobar.foobar.foobar'
+//   }
+// });
 
-class Cohort extends RestClient {}
 
-Cohort.path = 'https://learn.fullstackacademy.com/api/cohorts';
-Cohort.schema = new RestClient.Schema({
-  _id: { type: String, primary: true, validators: ['required'] },
-  name: { type: String, validators: ['required'] }
+
+const Model = require('./model');
+class Problem  extends Model {
+  
+};
+
+const Schema = require('./schema');
+Problem.schema = new Schema({
+  id: { type: Number, primary: true, validators: ['required'] },
+  title: { type: String, validators: ['required'] }
 }, {
   // this makes it impossible to add things not in the schema
   // strict: true
 });
 
 
-Cohort.findById('572d1079306d520300575068')
-  .then(cohort => console.log(cohort.json))
-  .catch(console.error);
+const Endpoint = require('./endpoint');
+
+class ProblemEndpoint extends Endpoint {}
+
+ProblemEndpoint.model = Problem;
+ProblemEndpoint.server = server;
+ProblemEndpoint.path = '/api/problems';
+
+
+server.post('/api/sessions', { email: 'email@email.com', password: 'this is a test'})
+  .then(jwt => {
+    console.log(jwt);
+    server.config({ headers: { Authorization: jwt} })
+  })
+  .then(() => {
+    return ProblemEndpoint.create({
+      title: 'foobar'
+    })
+  })
+  .then(console.log).catch(console.error);
+
+// Problem.findById(1)
+//   .then(cohort => console.log(cohort.json))
+//   .catch(console.error);
 // Cohort.find()
 // .then(console.log)
 // .catch(console.error);

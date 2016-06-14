@@ -1,0 +1,975 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "1.13.0",
+  "hash": "6aa2d88170ee3ee72ecd",
+  "time": 1110,
+  "publicPath": "",
+  "assetsByChunkName": {
+    "main": [
+      "./index.js",
+      "./index.js.map"
+    ]
+  },
+  "assets": [
+    {
+      "name": "./index.js",
+      "size": 30520,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "emitted": true
+    },
+    {
+      "name": "./index.js.map",
+      "size": 30144,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "emitted": true
+    }
+  ],
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "extraAsync": false,
+      "size": 27361,
+      "names": [
+        "main"
+      ],
+      "files": [
+        "./index.js",
+        "./index.js.map"
+      ],
+      "hash": "f6ae2265b4e9ce6714c4",
+      "parents": [],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+          "name": "./lib.js",
+          "index": 0,
+          "index2": 11,
+          "size": 161,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": null,
+          "profile": {
+            "factory": 27,
+            "building": 372
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "source": "'use strict';\n\nmodule.exports = {\n  Server: require('./server'),\n  Endpoint: require('./endpoint'),\n  Model: require('./model'),\n  Schema: require('./schema')\n};"
+        },
+        {
+          "id": 1,
+          "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/server.js",
+          "name": "./server.js",
+          "index": 1,
+          "index2": 1,
+          "size": 1666,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+          "profile": {
+            "factory": 5,
+            "building": 122
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+              "module": "./lib.js",
+              "moduleName": "./lib.js",
+              "type": "cjs require",
+              "userRequest": "./server",
+              "loc": "4:10-29"
+            },
+            {
+              "moduleId": 3,
+              "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/endpoint.js",
+              "module": "./endpoint.js",
+              "moduleName": "./endpoint.js",
+              "type": "cjs require",
+              "userRequest": "./server",
+              "loc": "7:13-32"
+            }
+          ],
+          "source": "'use strict';\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar JsonFetcher = require('json-fetcher').JsonFetcher;\nvar requester = new JsonFetcher();\n\nvar Server = function () {\n  function Server(base) {\n    _classCallCheck(this, Server);\n\n    this.base = base;\n    this.config({\n      credentials: 'include'\n    });\n  }\n\n  _createClass(Server, [{\n    key: 'config',\n    value: function config(obj) {\n      requester.config(obj);\n    }\n  }, {\n    key: 'get',\n    value: function get(subPath) {\n      return requester.get(this.base + subPath);\n    }\n  }, {\n    key: 'delete',\n    value: function _delete(subPath) {\n      return requester.delete(base + subPath);\n    }\n  }, {\n    key: 'post',\n    value: function post(subPath, body) {\n      return requester.post(this.base + subPath, { body: body });\n    }\n  }, {\n    key: 'put',\n    value: function put(subPath, body) {\n      return requester.put(base + subPath, { body: body });\n    }\n  }]);\n\n  return Server;\n}();\n\nmodule.exports = Server;"
+        },
+        {
+          "id": 2,
+          "identifier": "/Users/zekenierenberg/pks-server/rest-client/node_modules/json-fetcher/index.js",
+          "name": "./~/json-fetcher/index.js",
+          "index": 2,
+          "index2": 0,
+          "size": 8535,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/server.js",
+          "profile": {
+            "factory": 327,
+            "building": 96
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 1,
+              "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/server.js",
+              "module": "./server.js",
+              "moduleName": "./server.js",
+              "type": "cjs require",
+              "userRequest": "json-fetcher",
+              "loc": "7:18-41"
+            }
+          ],
+          "source": "!function(e,t){\"object\"==typeof exports&&\"object\"==typeof module?module.exports=t():\"function\"==typeof define&&define.amd?define([],t):\"object\"==typeof exports?exports.JsonFetcher=t():e.JsonFetcher=t()}(this,function(){return function(e){function t(n){if(r[n])return r[n].exports;var o=r[n]={exports:{},id:n,loaded:!1};return e[n].call(o.exports,o,o.exports,t),o.loaded=!0,o.exports}var r={};return t.m=e,t.c=r,t.p=\"\",t(0)}([function(e,t,r){\"use strict\";function n(e,t){if(!(e instanceof t))throw new TypeError(\"Cannot call a class as a function\")}Object.defineProperty(t,\"__esModule\",{value:!0}),t.JsonFetcher=t.copy=void 0;var o=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,\"value\"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),i=\"function\"==typeof Symbol&&\"symbol\"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&\"function\"==typeof Symbol&&e.constructor===Symbol?\"symbol\":typeof e},c=r(2),a=function p(e){if(null==e||\"object\"!=(\"undefined\"==typeof e?\"undefined\":i(e)))return e;var t=e.constructor();return Object.keys(e).forEach(function(r){e instanceof Object?t[r]=p(e[r]):t[r]=e[r]}),t};t.copy=a;var l={credentials:\"same-origin\",headers:{Accept:\"application/json\",\"Content-Type\":\"application/json\"}},u=function(e){if(\"string\"===!(\"undefined\"==typeof e?\"undefined\":i(e)))return e;try{return JSON.stringify(e)}catch(t){}},f=function(e){return\"string\"==typeof e?e:c.qs.stringify(options.query)},s=t.JsonFetcher=function(){function e(){var t=arguments.length<=0||void 0===arguments[0]?{}:arguments[0];n(this,e),this.defaults=Object.assign(t,l)}return o(e,[{key:\"config\",value:function(e){Object.assign(this.defaults,e)}},{key:\"request\",value:function(e){var t=arguments.length<=1||void 0===arguments[1]?{}:arguments[1];return t=Object.assign(a(this.defaults),t),t.body&&(t.body=u(t.body)),t.query&&(t.query=f(t.query),e+=\"?\"+t.query),fetch(e,t).then(function(e){return e.json()})}}]),e}();[\"head\",\"options\",\"connect\",\"get\",\"post\",\"put\",\"delete\"].reduce(function(e,t){return e[t]=function(e){var r=arguments.length<=1||void 0===arguments[1]?{}:arguments[1];return r.method=t.toUpperCase(),this.request(e,r)},e},s.prototype)},function(e,t){\"use strict\";var r=function(){for(var e=new Array(256),t=0;256>t;++t)e[t]=\"%\"+((16>t?\"0\":\"\")+t.toString(16)).toUpperCase();return e}();t.arrayToObject=function(e,t){for(var r=t.plainObjects?Object.create(null):{},n=0;n<e.length;++n)\"undefined\"!=typeof e[n]&&(r[n]=e[n]);return r},t.merge=function(e,r,n){if(!r)return e;if(\"object\"!=typeof r){if(Array.isArray(e))e.push(r);else{if(\"object\"!=typeof e)return[e,r];e[r]=!0}return e}if(\"object\"!=typeof e)return[e].concat(r);var o=e;return Array.isArray(e)&&!Array.isArray(r)&&(o=t.arrayToObject(e,n)),Object.keys(r).reduce(function(e,o){var i=r[o];return Object.prototype.hasOwnProperty.call(e,o)?e[o]=t.merge(e[o],i,n):e[o]=i,e},o)},t.decode=function(e){try{return decodeURIComponent(e.replace(/\\+/g,\" \"))}catch(t){return e}},t.encode=function(e){if(0===e.length)return e;for(var t=\"string\"==typeof e?e:String(e),n=\"\",o=0;o<t.length;++o){var i=t.charCodeAt(o);45===i||46===i||95===i||126===i||i>=48&&57>=i||i>=65&&90>=i||i>=97&&122>=i?n+=t.charAt(o):128>i?n+=r[i]:2048>i?n+=r[192|i>>6]+r[128|63&i]:55296>i||i>=57344?n+=r[224|i>>12]+r[128|i>>6&63]+r[128|63&i]:(o+=1,i=65536+((1023&i)<<10|1023&t.charCodeAt(o)),n+=r[240|i>>18]+r[128|i>>12&63]+r[128|i>>6&63]+r[128|63&i])}return n},t.compact=function(e,r){if(\"object\"!=typeof e||null===e)return e;var n=r||[],o=n.indexOf(e);if(-1!==o)return n[o];if(n.push(e),Array.isArray(e)){for(var i=[],c=0;c<e.length;++c)e[c]&&\"object\"==typeof e[c]?i.push(t.compact(e[c],n)):\"undefined\"!=typeof e[c]&&i.push(e[c]);return i}for(var a=Object.keys(e),l=0;l<a.length;++l){var u=a[l];e[u]=t.compact(e[u],n)}return e},t.isRegExp=function(e){return\"[object RegExp]\"===Object.prototype.toString.call(e)},t.isBuffer=function(e){return null===e||\"undefined\"==typeof e?!1:!!(e.constructor&&e.constructor.isBuffer&&e.constructor.isBuffer(e))}},function(e,t,r){\"use strict\";var n=r(4),o=r(3);e.exports={stringify:n,parse:o}},function(e,t,r){\"use strict\";var n=r(1),o={delimiter:\"&\",depth:5,arrayLimit:20,parameterLimit:1e3,strictNullHandling:!1,plainObjects:!1,allowPrototypes:!1,allowDots:!1,decoder:n.decode},i=function(e,t){for(var r={},n=e.split(t.delimiter,t.parameterLimit===1/0?void 0:t.parameterLimit),o=0;o<n.length;++o){var i=n[o],c=-1===i.indexOf(\"]=\")?i.indexOf(\"=\"):i.indexOf(\"]=\")+1;if(-1===c)r[t.decoder(i)]=\"\",t.strictNullHandling&&(r[t.decoder(i)]=null);else{var a=t.decoder(i.slice(0,c)),l=t.decoder(i.slice(c+1));Object.prototype.hasOwnProperty.call(r,a)?r[a]=[].concat(r[a]).concat(l):r[a]=l}}return r},c=function l(e,t,r){if(!e.length)return t;var n,o=e.shift();if(\"[]\"===o)n=[],n=n.concat(l(e,t,r));else{n=r.plainObjects?Object.create(null):{};var i=\"[\"===o[0]&&\"]\"===o[o.length-1]?o.slice(1,o.length-1):o,c=parseInt(i,10);!isNaN(c)&&o!==i&&String(c)===i&&c>=0&&r.parseArrays&&c<=r.arrayLimit?(n=[],n[c]=l(e,t,r)):n[i]=l(e,t,r)}return n},a=function(e,t,r){if(e){var n=r.allowDots?e.replace(/\\.([^\\.\\[]+)/g,\"[$1]\"):e,o=/^([^\\[\\]]*)/,i=/(\\[[^\\[\\]]*\\])/g,a=o.exec(n),l=[];if(a[1]){if(!r.plainObjects&&Object.prototype.hasOwnProperty(a[1])&&!r.allowPrototypes)return;l.push(a[1])}for(var u=0;null!==(a=i.exec(n))&&u<r.depth;)u+=1,(r.plainObjects||!Object.prototype.hasOwnProperty(a[1].replace(/\\[|\\]/g,\"\"))||r.allowPrototypes)&&l.push(a[1]);return a&&l.push(\"[\"+n.slice(a.index)+\"]\"),c(l,t,r)}};e.exports=function(e,t){var r=t||{};if(null!==r.decoder&&void 0!==r.decoder&&\"function\"!=typeof r.decoder)throw new TypeError(\"Decoder has to be a function.\");if(r.delimiter=\"string\"==typeof r.delimiter||n.isRegExp(r.delimiter)?r.delimiter:o.delimiter,r.depth=\"number\"==typeof r.depth?r.depth:o.depth,r.arrayLimit=\"number\"==typeof r.arrayLimit?r.arrayLimit:o.arrayLimit,r.parseArrays=r.parseArrays!==!1,r.decoder=\"function\"==typeof r.decoder?r.decoder:o.decoder,r.allowDots=\"boolean\"==typeof r.allowDots?r.allowDots:o.allowDots,r.plainObjects=\"boolean\"==typeof r.plainObjects?r.plainObjects:o.plainObjects,r.allowPrototypes=\"boolean\"==typeof r.allowPrototypes?r.allowPrototypes:o.allowPrototypes,r.parameterLimit=\"number\"==typeof r.parameterLimit?r.parameterLimit:o.parameterLimit,r.strictNullHandling=\"boolean\"==typeof r.strictNullHandling?r.strictNullHandling:o.strictNullHandling,\"\"===e||null===e||\"undefined\"==typeof e)return r.plainObjects?Object.create(null):{};for(var c=\"string\"==typeof e?i(e,r):e,l=r.plainObjects?Object.create(null):{},u=Object.keys(c),f=0;f<u.length;++f){var s=u[f],p=a(s,c[s],r);l=n.merge(l,p,r)}return n.compact(l)}},function(e,t,r){\"use strict\";var n=r(1),o={brackets:function(e){return e+\"[]\"},indices:function(e,t){return e+\"[\"+t+\"]\"},repeat:function(e){return e}},i={delimiter:\"&\",strictNullHandling:!1,skipNulls:!1,encode:!0,encoder:n.encode},c=function a(e,t,r,o,i,c,l,u,f){var s=e;if(\"function\"==typeof l)s=l(t,s);else if(s instanceof Date)s=s.toISOString();else if(null===s){if(o)return c?c(t):t;s=\"\"}if(\"string\"==typeof s||\"number\"==typeof s||\"boolean\"==typeof s||n.isBuffer(s))return c?[c(t)+\"=\"+c(s)]:[t+\"=\"+String(s)];var p=[];if(\"undefined\"==typeof s)return p;var d;if(Array.isArray(l))d=l;else{var y=Object.keys(s);d=u?y.sort(u):y}for(var b=0;b<d.length;++b){var h=d[b];i&&null===s[h]||(p=Array.isArray(s)?p.concat(a(s[h],r(t,h),r,o,i,c,l,u,f)):p.concat(a(s[h],t+(f?\".\"+h:\"[\"+h+\"]\"),r,o,i,c,l,u,f)))}return p};e.exports=function(e,t){var r,n,a=e,l=t||{},u=\"undefined\"==typeof l.delimiter?i.delimiter:l.delimiter,f=\"boolean\"==typeof l.strictNullHandling?l.strictNullHandling:i.strictNullHandling,s=\"boolean\"==typeof l.skipNulls?l.skipNulls:i.skipNulls,p=\"boolean\"==typeof l.encode?l.encode:i.encode,d=p?\"function\"==typeof l.encoder?l.encoder:i.encoder:null,y=\"function\"==typeof l.sort?l.sort:null,b=\"undefined\"==typeof l.allowDots?!1:l.allowDots;if(null!==l.encoder&&void 0!==l.encoder&&\"function\"!=typeof l.encoder)throw new TypeError(\"Encoder has to be a function.\");\"function\"==typeof l.filter?(n=l.filter,a=n(\"\",a)):Array.isArray(l.filter)&&(r=n=l.filter);var h=[];if(\"object\"!=typeof a||null===a)return\"\";var m;m=l.arrayFormat in o?l.arrayFormat:\"indices\"in l?l.indices?\"indices\":\"repeat\":\"indices\";var g=o[m];r||(r=Object.keys(a)),y&&r.sort(y);for(var v=0;v<r.length;++v){var j=r[v];s&&null===a[j]||(h=h.concat(c(a[j],j,g,f,s,d,n,y,b)))}return h.join(u)}}])});\n//# sourceMappingURL=index.js.map"
+        },
+        {
+          "id": 3,
+          "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/endpoint.js",
+          "name": "./endpoint.js",
+          "index": 3,
+          "index2": 10,
+          "size": 5173,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+          "profile": {
+            "factory": 6,
+            "building": 252,
+            "dependencies": 0
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+              "module": "./lib.js",
+              "moduleName": "./lib.js",
+              "type": "cjs require",
+              "userRequest": "./endpoint",
+              "loc": "5:12-33"
+            }
+          ],
+          "source": "'use strict';\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Server = require('./server');\n// const inflection = require('inflection');\n\nvar Model = require('./model');\n\n/** private statics */\nvar buildFromArray = function buildFromArray(arr, parent) {\n  var _this = this;\n\n  return arr.map(function (obj) {\n    return buildFromObj.call(_this, obj, parent);\n  });\n};\n\nvar buildFromObj = function buildFromObj(obj, parent) {\n  return new this(obj, parent);\n};\n/** end private statics */\n\nvar Endpoint = function () {\n  function Endpoint(obj) {\n    var parent = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];\n\n    _classCallCheck(this, Endpoint);\n\n    this.parent = parent;\n    this.data = new this.constructor.model(obj, parent.model);\n  }\n\n  _createClass(Endpoint, [{\n    key: 'update',\n    value: function update() {\n      var _this2 = this;\n\n      var changes = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];\n\n      if (!this.id) {\n        throw new Error('cannot update document without id. try calling create');\n      }\n      this.data.merge(changes);\n      var diff = this.data.dirtyValues;\n      return this.constructor.server.put(this.url, diff).then(function (resp) {\n        return _this2.data.merge(resp);\n      }).then(function () {\n        return _this2.data.clearDirtyList();\n      });\n    }\n  }, {\n    key: 'create',\n    value: function create() {\n      var _this3 = this;\n\n      if (!!this.id) {\n        throw new Error('cannot recreate document that already has identifier');\n      }\n      return this.constructor.create(this.data.values).then(function (resp) {\n        return _this3.data.merge(resp);\n      }).then(function () {\n        return _this3.data.clearDirtyList();\n      });\n    }\n  }, {\n    key: 'delete',\n    value: function _delete() {\n      return this.constructor.delete(this.url);\n    }\n  }, {\n    key: 'id',\n    get: function get() {\n      return this.data[primaryIdentifier];\n    }\n  }, {\n    key: 'parentUrl',\n    get: function get() {\n      if (!!this.parent) {\n        return this.parent.url;\n      } else {\n        return this.constructor.path;\n      }\n    }\n  }, {\n    key: 'url',\n    get: function get() {\n      var subRoute = void 0;\n      if (this.constructor.parents) {\n        subRoute = this.constructor.parents.get(this.parent.constructor);\n      }\n      return [this.parentUrl, subRoute, this.id].filter(function (part) {\n        return !!part;\n      }).join('/');\n    }\n  }], [{\n    key: 'find',\n    value: function find() {\n      var query = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];\n\n      if (!!this.parent) {\n        throw new Error('cannot find on nested route');\n      }\n      return this.server.get(this.path).then(buildFromArray.bind(this));\n    }\n  }, {\n    key: 'delete',\n    value: function _delete(url) {\n      return this.server.delete(url);\n    }\n  }, {\n    key: 'findById',\n    value: function findById(id) {\n      if (!!this.parent) {\n        throw new Error('cannot find by id on nested route');\n      }\n      return this.server.get(this.path + '/' + id).then(buildFromObj.bind(this));\n    }\n  }, {\n    key: 'create',\n    value: function create() {\n      var obj = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];\n\n      if (!!this.parent) {\n        throw new Error('cannot create ' + this.name + ' with create method because ' + this.name + ' is a subclass. call create from a parent.');\n      }\n      return this.server.post(this.path, obj).then(buildFromObj.bind(this));\n    }\n\n    // static nest(otherClass, route) {\n    //   route = route || inflection.pluralize(otherClass.name).toLowerCase();\n    //   // parents is a map of the class to its mounted route\n    //   otherClass.parents = otherClass.parents || new Map();\n    //   otherClass.parents.set(this, route);\n\n    //   const pluralName = inflection.pluralize(otherClass.name);\n    //   const singularName = otherClass.name;\n    //   this.prototype[`get${pluralName}`] = function() {\n    //     return this.server.get(`${this.url}/${route}`)\n    //       .then(resArr => buildFromArray.call(otherClass, resArr, this));\n    //   };\n\n    //   this.prototype[`create${singularName}`] = function(obj={}) {\n    //     return this.server.post(`${this.url}/${route}`, obj )\n    //       .then(res => buildFromObj.call(otherClass, res, this))\n    //   }\n    // }\n\n  }]);\n\n  return Endpoint;\n}();\n\nmodule.exports = Endpoint;\nmodule.exports.Schema = require('./schema');"
+        },
+        {
+          "id": 4,
+          "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/model.js",
+          "name": "./model.js",
+          "index": 4,
+          "index2": 2,
+          "size": 6044,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+          "profile": {
+            "factory": 7,
+            "building": 410
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+              "module": "./lib.js",
+              "moduleName": "./lib.js",
+              "type": "cjs require",
+              "userRequest": "./model",
+              "loc": "6:9-27"
+            },
+            {
+              "moduleId": 3,
+              "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/endpoint.js",
+              "module": "./endpoint.js",
+              "moduleName": "./endpoint.js",
+              "type": "cjs require",
+              "userRequest": "./model",
+              "loc": "10:12-30"
+            }
+          ],
+          "source": "'use strict';\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"]) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); } }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar symbols = {\n  paths: Symbol('paths'),\n  dirtyList: Symbol('dirtyList'),\n  parent: Symbol('parent')\n};\n\n/** Private instance methods */\nvar addPath = function addPath(path, schemaPath) {\n  var _this = this;\n\n  var sym = Symbol(path);\n  this[symbols.paths].set(path, sym);\n  Object.defineProperty(this, path, {\n    get: function get() {\n      return _this[sym];\n    }\n  });\n};\n\nvar buildSchema = function buildSchema() {\n  var _iteratorNormalCompletion = true;\n  var _didIteratorError = false;\n  var _iteratorError = undefined;\n\n  try {\n    for (var _iterator = this.constructor.schema[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n      var _step$value = _slicedToArray(_step.value, 2);\n\n      var path = _step$value[0];\n      var schemaPath = _step$value[1];\n\n      addPath.call(this, path, schemaPath);\n    }\n  } catch (err) {\n    _didIteratorError = true;\n    _iteratorError = err;\n  } finally {\n    try {\n      if (!_iteratorNormalCompletion && _iterator.return) {\n        _iterator.return();\n      }\n    } finally {\n      if (_didIteratorError) {\n        throw _iteratorError;\n      }\n    }\n  }\n};\n/** /end private instance methods */\n\nvar Model = function () {\n  function Model(obj, parent) {\n    _classCallCheck(this, Model);\n\n    this[symbols.parent] = parent;\n\n    // this is a private hashmap of strings for a path to their symbols\n    this[symbols.paths] = new Map();\n\n    // set of paths that have changed\n    this[symbols.dirtyList] = new Set();\n\n    buildSchema.call(this);\n    this.merge(obj);\n  }\n\n  _createClass(Model, [{\n    key: 'clearDirtyList',\n    value: function clearDirtyList() {\n      this[symbols.dirtyList].clear();\n    }\n  }, {\n    key: 'merge',\n    value: function merge(changes) {\n      var _this2 = this;\n\n      Object.keys(changes).forEach(function (key) {\n        var change = changes[key];\n        var keySym = _this2[symbols.paths].get(key);\n        if (!keySym) {\n          if (!_this2.constructor.schema.strict) {\n            addPath.call(_this2, key);\n            keySym = _this2[symbols.paths].get(key);\n          } else {\n            return;\n          }\n        }\n        _this2[keySym] = change;\n        _this2[symbols.dirtyList].add(key);\n      });\n      return this;\n    }\n  }, {\n    key: 'reduce',\n    value: function reduce(fn, startingValue) {\n      var _iteratorNormalCompletion2 = true;\n      var _didIteratorError2 = false;\n      var _iteratorError2 = undefined;\n\n      try {\n        for (var _iterator2 = this[symbols.paths][Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {\n          var _step2$value = _slicedToArray(_step2.value, 2);\n\n          var str = _step2$value[0];\n          var sym = _step2$value[1];\n\n          startingValue = fn.call(this, startingValue, str, this[sym]);\n        }\n      } catch (err) {\n        _didIteratorError2 = true;\n        _iteratorError2 = err;\n      } finally {\n        try {\n          if (!_iteratorNormalCompletion2 && _iterator2.return) {\n            _iterator2.return();\n          }\n        } finally {\n          if (_didIteratorError2) {\n            throw _iteratorError2;\n          }\n        }\n      }\n\n      return startingValue;\n    }\n  }, {\n    key: 'values',\n    get: function get() {\n      return Object.assign({}, this.reduce(function (holdOver, key, val) {\n        holdOver[key] = val;\n        return holdOver;\n      }, {}));\n    }\n  }, {\n    key: 'dirtyValues',\n    get: function get() {\n      var obj = {};\n      var _iteratorNormalCompletion3 = true;\n      var _didIteratorError3 = false;\n      var _iteratorError3 = undefined;\n\n      try {\n        for (var _iterator3 = this[symbols.dirtyList][Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {\n          var key = _step3.value;\n\n          obj[key] = this[key];\n        }\n      } catch (err) {\n        _didIteratorError3 = true;\n        _iteratorError3 = err;\n      } finally {\n        try {\n          if (!_iteratorNormalCompletion3 && _iterator3.return) {\n            _iterator3.return();\n          }\n        } finally {\n          if (_didIteratorError3) {\n            throw _iteratorError3;\n          }\n        }\n      }\n\n      return Object.assign({}, obj);\n    }\n  }, {\n    key: 'parentDoc',\n    get: function get() {\n      return this[symbols.parent];\n    }\n  }, {\n    key: 'primaryIdentifier',\n    get: function get() {\n      return this[this.constructor.schema.primary];\n    }\n  }]);\n\n  return Model;\n}();\n\nmodule.exports = Model;"
+        },
+        {
+          "id": 5,
+          "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schema.js",
+          "name": "./schema.js",
+          "index": 5,
+          "index2": 9,
+          "size": 1641,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+          "profile": {
+            "factory": 7,
+            "building": 444
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+              "module": "./lib.js",
+              "moduleName": "./lib.js",
+              "type": "cjs require",
+              "userRequest": "./schema",
+              "loc": "7:10-29"
+            },
+            {
+              "moduleId": 3,
+              "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/endpoint.js",
+              "module": "./endpoint.js",
+              "moduleName": "./endpoint.js",
+              "type": "cjs require",
+              "userRequest": "./schema",
+              "loc": "157:24-43"
+            }
+          ],
+          "source": "'use strict';\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar SchemaPath = require('./schemaPath');\n\nvar Schema = function () {\n  function Schema() {\n    var _this = this;\n\n    var props = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];\n    var config = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];\n\n    _classCallCheck(this, Schema);\n\n    this.data = new Map();\n    this[Symbol.iterator] = this.data[Symbol.iterator].bind(this.data);\n    Object.keys(props).forEach(function (key) {\n      return _this.set(key, props[key]);\n    });\n    Object.assign(this, config);\n  }\n\n  _createClass(Schema, [{\n    key: 'set',\n    value: function set(key, val) {\n      if (val.primary) {\n        this.primary = key;\n      }\n      this.data.set(key, new SchemaPath(val));\n    }\n  }, {\n    key: 'get',\n    value: function get(key) {\n      return this.data.get(key);\n    }\n  }]);\n\n  return Schema;\n}();\n\nmodule.exports = Schema;"
+        },
+        {
+          "id": 6,
+          "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schemaPath.js",
+          "name": "./schemaPath.js",
+          "index": 6,
+          "index2": 8,
+          "size": 2166,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schema.js",
+          "profile": {
+            "factory": 2,
+            "building": 52
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 5,
+              "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schema.js",
+              "module": "./schema.js",
+              "moduleName": "./schema.js",
+              "type": "cjs require",
+              "userRequest": "./schemaPath",
+              "loc": "7:17-40"
+            }
+          ],
+          "source": "'use strict';\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar validators = require('./validators');\nvar ValidationError = require('./errors/validationError');\n\nvar buildValidators = function buildValidators() {\n  if (!!this.type) {\n    this.validators.push('type');\n  }\n  this.validators = this.validators.map(function (validator) {\n    if (typeof validator === 'string') {\n      return validators[validator];\n    }\n    return validator;\n  }).filter(function (validator) {\n    return !!validator;\n  });\n};\n\nvar SchemaPath = function () {\n  function SchemaPath() {\n    var props = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];\n\n    _classCallCheck(this, SchemaPath);\n\n    Object.assign(this, props);\n    this.validators = this.validators || [];\n    buildValidators.call(this);\n  }\n\n  _createClass(SchemaPath, [{\n    key: 'validate',\n    value: function validate(value) {\n      var _this = this;\n\n      var promises = this.validators.map(function (validator) {\n        return validator.validator(value);\n      });\n\n      return Promise.all(promises).then(function (validationResults) {\n        return validationResults.map(function (result, i) {\n          if (result) {\n            return new ValidationError(_this.validators[i].error(value));\n          }\n        });\n      }).then(function (errors) {\n        return errors.filter(function (err) {\n          return !!err;\n        });\n      });\n    }\n  }]);\n\n  return SchemaPath;\n}();\n\nmodule.exports = SchemaPath;"
+        },
+        {
+          "id": 7,
+          "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/index.js",
+          "name": "./validators/index.js",
+          "index": 7,
+          "index2": 6,
+          "size": 126,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schemaPath.js",
+          "profile": {
+            "factory": 46,
+            "building": 28
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 6,
+              "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schemaPath.js",
+              "module": "./schemaPath.js",
+              "moduleName": "./schemaPath.js",
+              "type": "cjs require",
+              "userRequest": "./validators",
+              "loc": "7:17-40"
+            }
+          ],
+          "source": "'use strict';\n\nexports.email = require('./email');\nexports.required = require('./required');\nexports.type = require('./type');"
+        },
+        {
+          "id": 8,
+          "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/email.js",
+          "name": "./validators/email.js",
+          "index": 8,
+          "index2": 3,
+          "size": 200,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/index.js",
+          "profile": {
+            "factory": 9,
+            "building": 9
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 7,
+              "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/index.js",
+              "module": "./validators/index.js",
+              "moduleName": "./validators/index.js",
+              "type": "cjs require",
+              "userRequest": "./email",
+              "loc": "3:16-34"
+            }
+          ],
+          "source": "'use strict';\n\nmodule.exports.validator = function (val) {\n  var regex = /\\S+@\\S+\\.\\S+/;\n  return regex.test(val);\n};\n\nmodule.exports.error = function (v) {\n  return v + ' is not an email address';\n};"
+        },
+        {
+          "id": 9,
+          "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/required.js",
+          "name": "./validators/required.js",
+          "index": 9,
+          "index2": 4,
+          "size": 189,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/index.js",
+          "profile": {
+            "factory": 9,
+            "building": 16
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 7,
+              "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/index.js",
+              "module": "./validators/index.js",
+              "moduleName": "./validators/index.js",
+              "type": "cjs require",
+              "userRequest": "./required",
+              "loc": "4:19-40"
+            }
+          ],
+          "source": "'use strict';\n\nmodule.exports.validator = function (value) {\n  return !undefined.required || !!value;\n};\n\nmodule.exports.error = function () {\n  return 'Value is required for this path';\n};"
+        },
+        {
+          "id": 10,
+          "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/type.js",
+          "name": "./validators/type.js",
+          "index": 10,
+          "index2": 5,
+          "size": 212,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/index.js",
+          "profile": {
+            "factory": 10,
+            "building": 23
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 7,
+              "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/index.js",
+              "module": "./validators/index.js",
+              "moduleName": "./validators/index.js",
+              "type": "cjs require",
+              "userRequest": "./type",
+              "loc": "5:15-32"
+            }
+          ],
+          "source": "'use strict';\n\nmodule.exports.validator = function (value) {\n  return !!value && value.constructor === undefined.type;\n};\n\nmodule.exports.error = function (val) {\n  return val + ' does not match correct type';\n};"
+        },
+        {
+          "id": 11,
+          "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/errors/validationError.js",
+          "name": "./errors/validationError.js",
+          "index": 11,
+          "index2": 7,
+          "size": 1248,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schemaPath.js",
+          "profile": {
+            "factory": 46,
+            "building": 22
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 6,
+              "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schemaPath.js",
+              "module": "./schemaPath.js",
+              "moduleName": "./schemaPath.js",
+              "type": "cjs require",
+              "userRequest": "./errors/validationError",
+              "loc": "8:22-57"
+            }
+          ],
+          "source": "\"use strict\";\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar ValidationError = function (_Error) {\n  _inherits(ValidationError, _Error);\n\n  function ValidationError() {\n    _classCallCheck(this, ValidationError);\n\n    return _possibleConstructorReturn(this, Object.getPrototypeOf(ValidationError).apply(this, arguments));\n  }\n\n  return ValidationError;\n}(Error);\n\nmodule.exports = ValidationError;"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+          "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+          "moduleName": "./lib.js",
+          "loc": "",
+          "name": "main",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+      "name": "./lib.js",
+      "index": 0,
+      "index2": 11,
+      "size": 161,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": null,
+      "profile": {
+        "factory": 27,
+        "building": 372
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "source": "'use strict';\n\nmodule.exports = {\n  Server: require('./server'),\n  Endpoint: require('./endpoint'),\n  Model: require('./model'),\n  Schema: require('./schema')\n};"
+    },
+    {
+      "id": 1,
+      "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/server.js",
+      "name": "./server.js",
+      "index": 1,
+      "index2": 1,
+      "size": 1666,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+      "profile": {
+        "factory": 5,
+        "building": 122
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+          "module": "./lib.js",
+          "moduleName": "./lib.js",
+          "type": "cjs require",
+          "userRequest": "./server",
+          "loc": "4:10-29"
+        },
+        {
+          "moduleId": 3,
+          "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/endpoint.js",
+          "module": "./endpoint.js",
+          "moduleName": "./endpoint.js",
+          "type": "cjs require",
+          "userRequest": "./server",
+          "loc": "7:13-32"
+        }
+      ],
+      "source": "'use strict';\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar JsonFetcher = require('json-fetcher').JsonFetcher;\nvar requester = new JsonFetcher();\n\nvar Server = function () {\n  function Server(base) {\n    _classCallCheck(this, Server);\n\n    this.base = base;\n    this.config({\n      credentials: 'include'\n    });\n  }\n\n  _createClass(Server, [{\n    key: 'config',\n    value: function config(obj) {\n      requester.config(obj);\n    }\n  }, {\n    key: 'get',\n    value: function get(subPath) {\n      return requester.get(this.base + subPath);\n    }\n  }, {\n    key: 'delete',\n    value: function _delete(subPath) {\n      return requester.delete(base + subPath);\n    }\n  }, {\n    key: 'post',\n    value: function post(subPath, body) {\n      return requester.post(this.base + subPath, { body: body });\n    }\n  }, {\n    key: 'put',\n    value: function put(subPath, body) {\n      return requester.put(base + subPath, { body: body });\n    }\n  }]);\n\n  return Server;\n}();\n\nmodule.exports = Server;"
+    },
+    {
+      "id": 2,
+      "identifier": "/Users/zekenierenberg/pks-server/rest-client/node_modules/json-fetcher/index.js",
+      "name": "./~/json-fetcher/index.js",
+      "index": 2,
+      "index2": 0,
+      "size": 8535,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/server.js",
+      "profile": {
+        "factory": 327,
+        "building": 96
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 1,
+          "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/server.js",
+          "module": "./server.js",
+          "moduleName": "./server.js",
+          "type": "cjs require",
+          "userRequest": "json-fetcher",
+          "loc": "7:18-41"
+        }
+      ],
+      "source": "!function(e,t){\"object\"==typeof exports&&\"object\"==typeof module?module.exports=t():\"function\"==typeof define&&define.amd?define([],t):\"object\"==typeof exports?exports.JsonFetcher=t():e.JsonFetcher=t()}(this,function(){return function(e){function t(n){if(r[n])return r[n].exports;var o=r[n]={exports:{},id:n,loaded:!1};return e[n].call(o.exports,o,o.exports,t),o.loaded=!0,o.exports}var r={};return t.m=e,t.c=r,t.p=\"\",t(0)}([function(e,t,r){\"use strict\";function n(e,t){if(!(e instanceof t))throw new TypeError(\"Cannot call a class as a function\")}Object.defineProperty(t,\"__esModule\",{value:!0}),t.JsonFetcher=t.copy=void 0;var o=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,\"value\"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),i=\"function\"==typeof Symbol&&\"symbol\"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&\"function\"==typeof Symbol&&e.constructor===Symbol?\"symbol\":typeof e},c=r(2),a=function p(e){if(null==e||\"object\"!=(\"undefined\"==typeof e?\"undefined\":i(e)))return e;var t=e.constructor();return Object.keys(e).forEach(function(r){e instanceof Object?t[r]=p(e[r]):t[r]=e[r]}),t};t.copy=a;var l={credentials:\"same-origin\",headers:{Accept:\"application/json\",\"Content-Type\":\"application/json\"}},u=function(e){if(\"string\"===!(\"undefined\"==typeof e?\"undefined\":i(e)))return e;try{return JSON.stringify(e)}catch(t){}},f=function(e){return\"string\"==typeof e?e:c.qs.stringify(options.query)},s=t.JsonFetcher=function(){function e(){var t=arguments.length<=0||void 0===arguments[0]?{}:arguments[0];n(this,e),this.defaults=Object.assign(t,l)}return o(e,[{key:\"config\",value:function(e){Object.assign(this.defaults,e)}},{key:\"request\",value:function(e){var t=arguments.length<=1||void 0===arguments[1]?{}:arguments[1];return t=Object.assign(a(this.defaults),t),t.body&&(t.body=u(t.body)),t.query&&(t.query=f(t.query),e+=\"?\"+t.query),fetch(e,t).then(function(e){return e.json()})}}]),e}();[\"head\",\"options\",\"connect\",\"get\",\"post\",\"put\",\"delete\"].reduce(function(e,t){return e[t]=function(e){var r=arguments.length<=1||void 0===arguments[1]?{}:arguments[1];return r.method=t.toUpperCase(),this.request(e,r)},e},s.prototype)},function(e,t){\"use strict\";var r=function(){for(var e=new Array(256),t=0;256>t;++t)e[t]=\"%\"+((16>t?\"0\":\"\")+t.toString(16)).toUpperCase();return e}();t.arrayToObject=function(e,t){for(var r=t.plainObjects?Object.create(null):{},n=0;n<e.length;++n)\"undefined\"!=typeof e[n]&&(r[n]=e[n]);return r},t.merge=function(e,r,n){if(!r)return e;if(\"object\"!=typeof r){if(Array.isArray(e))e.push(r);else{if(\"object\"!=typeof e)return[e,r];e[r]=!0}return e}if(\"object\"!=typeof e)return[e].concat(r);var o=e;return Array.isArray(e)&&!Array.isArray(r)&&(o=t.arrayToObject(e,n)),Object.keys(r).reduce(function(e,o){var i=r[o];return Object.prototype.hasOwnProperty.call(e,o)?e[o]=t.merge(e[o],i,n):e[o]=i,e},o)},t.decode=function(e){try{return decodeURIComponent(e.replace(/\\+/g,\" \"))}catch(t){return e}},t.encode=function(e){if(0===e.length)return e;for(var t=\"string\"==typeof e?e:String(e),n=\"\",o=0;o<t.length;++o){var i=t.charCodeAt(o);45===i||46===i||95===i||126===i||i>=48&&57>=i||i>=65&&90>=i||i>=97&&122>=i?n+=t.charAt(o):128>i?n+=r[i]:2048>i?n+=r[192|i>>6]+r[128|63&i]:55296>i||i>=57344?n+=r[224|i>>12]+r[128|i>>6&63]+r[128|63&i]:(o+=1,i=65536+((1023&i)<<10|1023&t.charCodeAt(o)),n+=r[240|i>>18]+r[128|i>>12&63]+r[128|i>>6&63]+r[128|63&i])}return n},t.compact=function(e,r){if(\"object\"!=typeof e||null===e)return e;var n=r||[],o=n.indexOf(e);if(-1!==o)return n[o];if(n.push(e),Array.isArray(e)){for(var i=[],c=0;c<e.length;++c)e[c]&&\"object\"==typeof e[c]?i.push(t.compact(e[c],n)):\"undefined\"!=typeof e[c]&&i.push(e[c]);return i}for(var a=Object.keys(e),l=0;l<a.length;++l){var u=a[l];e[u]=t.compact(e[u],n)}return e},t.isRegExp=function(e){return\"[object RegExp]\"===Object.prototype.toString.call(e)},t.isBuffer=function(e){return null===e||\"undefined\"==typeof e?!1:!!(e.constructor&&e.constructor.isBuffer&&e.constructor.isBuffer(e))}},function(e,t,r){\"use strict\";var n=r(4),o=r(3);e.exports={stringify:n,parse:o}},function(e,t,r){\"use strict\";var n=r(1),o={delimiter:\"&\",depth:5,arrayLimit:20,parameterLimit:1e3,strictNullHandling:!1,plainObjects:!1,allowPrototypes:!1,allowDots:!1,decoder:n.decode},i=function(e,t){for(var r={},n=e.split(t.delimiter,t.parameterLimit===1/0?void 0:t.parameterLimit),o=0;o<n.length;++o){var i=n[o],c=-1===i.indexOf(\"]=\")?i.indexOf(\"=\"):i.indexOf(\"]=\")+1;if(-1===c)r[t.decoder(i)]=\"\",t.strictNullHandling&&(r[t.decoder(i)]=null);else{var a=t.decoder(i.slice(0,c)),l=t.decoder(i.slice(c+1));Object.prototype.hasOwnProperty.call(r,a)?r[a]=[].concat(r[a]).concat(l):r[a]=l}}return r},c=function l(e,t,r){if(!e.length)return t;var n,o=e.shift();if(\"[]\"===o)n=[],n=n.concat(l(e,t,r));else{n=r.plainObjects?Object.create(null):{};var i=\"[\"===o[0]&&\"]\"===o[o.length-1]?o.slice(1,o.length-1):o,c=parseInt(i,10);!isNaN(c)&&o!==i&&String(c)===i&&c>=0&&r.parseArrays&&c<=r.arrayLimit?(n=[],n[c]=l(e,t,r)):n[i]=l(e,t,r)}return n},a=function(e,t,r){if(e){var n=r.allowDots?e.replace(/\\.([^\\.\\[]+)/g,\"[$1]\"):e,o=/^([^\\[\\]]*)/,i=/(\\[[^\\[\\]]*\\])/g,a=o.exec(n),l=[];if(a[1]){if(!r.plainObjects&&Object.prototype.hasOwnProperty(a[1])&&!r.allowPrototypes)return;l.push(a[1])}for(var u=0;null!==(a=i.exec(n))&&u<r.depth;)u+=1,(r.plainObjects||!Object.prototype.hasOwnProperty(a[1].replace(/\\[|\\]/g,\"\"))||r.allowPrototypes)&&l.push(a[1]);return a&&l.push(\"[\"+n.slice(a.index)+\"]\"),c(l,t,r)}};e.exports=function(e,t){var r=t||{};if(null!==r.decoder&&void 0!==r.decoder&&\"function\"!=typeof r.decoder)throw new TypeError(\"Decoder has to be a function.\");if(r.delimiter=\"string\"==typeof r.delimiter||n.isRegExp(r.delimiter)?r.delimiter:o.delimiter,r.depth=\"number\"==typeof r.depth?r.depth:o.depth,r.arrayLimit=\"number\"==typeof r.arrayLimit?r.arrayLimit:o.arrayLimit,r.parseArrays=r.parseArrays!==!1,r.decoder=\"function\"==typeof r.decoder?r.decoder:o.decoder,r.allowDots=\"boolean\"==typeof r.allowDots?r.allowDots:o.allowDots,r.plainObjects=\"boolean\"==typeof r.plainObjects?r.plainObjects:o.plainObjects,r.allowPrototypes=\"boolean\"==typeof r.allowPrototypes?r.allowPrototypes:o.allowPrototypes,r.parameterLimit=\"number\"==typeof r.parameterLimit?r.parameterLimit:o.parameterLimit,r.strictNullHandling=\"boolean\"==typeof r.strictNullHandling?r.strictNullHandling:o.strictNullHandling,\"\"===e||null===e||\"undefined\"==typeof e)return r.plainObjects?Object.create(null):{};for(var c=\"string\"==typeof e?i(e,r):e,l=r.plainObjects?Object.create(null):{},u=Object.keys(c),f=0;f<u.length;++f){var s=u[f],p=a(s,c[s],r);l=n.merge(l,p,r)}return n.compact(l)}},function(e,t,r){\"use strict\";var n=r(1),o={brackets:function(e){return e+\"[]\"},indices:function(e,t){return e+\"[\"+t+\"]\"},repeat:function(e){return e}},i={delimiter:\"&\",strictNullHandling:!1,skipNulls:!1,encode:!0,encoder:n.encode},c=function a(e,t,r,o,i,c,l,u,f){var s=e;if(\"function\"==typeof l)s=l(t,s);else if(s instanceof Date)s=s.toISOString();else if(null===s){if(o)return c?c(t):t;s=\"\"}if(\"string\"==typeof s||\"number\"==typeof s||\"boolean\"==typeof s||n.isBuffer(s))return c?[c(t)+\"=\"+c(s)]:[t+\"=\"+String(s)];var p=[];if(\"undefined\"==typeof s)return p;var d;if(Array.isArray(l))d=l;else{var y=Object.keys(s);d=u?y.sort(u):y}for(var b=0;b<d.length;++b){var h=d[b];i&&null===s[h]||(p=Array.isArray(s)?p.concat(a(s[h],r(t,h),r,o,i,c,l,u,f)):p.concat(a(s[h],t+(f?\".\"+h:\"[\"+h+\"]\"),r,o,i,c,l,u,f)))}return p};e.exports=function(e,t){var r,n,a=e,l=t||{},u=\"undefined\"==typeof l.delimiter?i.delimiter:l.delimiter,f=\"boolean\"==typeof l.strictNullHandling?l.strictNullHandling:i.strictNullHandling,s=\"boolean\"==typeof l.skipNulls?l.skipNulls:i.skipNulls,p=\"boolean\"==typeof l.encode?l.encode:i.encode,d=p?\"function\"==typeof l.encoder?l.encoder:i.encoder:null,y=\"function\"==typeof l.sort?l.sort:null,b=\"undefined\"==typeof l.allowDots?!1:l.allowDots;if(null!==l.encoder&&void 0!==l.encoder&&\"function\"!=typeof l.encoder)throw new TypeError(\"Encoder has to be a function.\");\"function\"==typeof l.filter?(n=l.filter,a=n(\"\",a)):Array.isArray(l.filter)&&(r=n=l.filter);var h=[];if(\"object\"!=typeof a||null===a)return\"\";var m;m=l.arrayFormat in o?l.arrayFormat:\"indices\"in l?l.indices?\"indices\":\"repeat\":\"indices\";var g=o[m];r||(r=Object.keys(a)),y&&r.sort(y);for(var v=0;v<r.length;++v){var j=r[v];s&&null===a[j]||(h=h.concat(c(a[j],j,g,f,s,d,n,y,b)))}return h.join(u)}}])});\n//# sourceMappingURL=index.js.map"
+    },
+    {
+      "id": 3,
+      "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/endpoint.js",
+      "name": "./endpoint.js",
+      "index": 3,
+      "index2": 10,
+      "size": 5173,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+      "profile": {
+        "factory": 6,
+        "building": 252,
+        "dependencies": 0
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+          "module": "./lib.js",
+          "moduleName": "./lib.js",
+          "type": "cjs require",
+          "userRequest": "./endpoint",
+          "loc": "5:12-33"
+        }
+      ],
+      "source": "'use strict';\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Server = require('./server');\n// const inflection = require('inflection');\n\nvar Model = require('./model');\n\n/** private statics */\nvar buildFromArray = function buildFromArray(arr, parent) {\n  var _this = this;\n\n  return arr.map(function (obj) {\n    return buildFromObj.call(_this, obj, parent);\n  });\n};\n\nvar buildFromObj = function buildFromObj(obj, parent) {\n  return new this(obj, parent);\n};\n/** end private statics */\n\nvar Endpoint = function () {\n  function Endpoint(obj) {\n    var parent = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];\n\n    _classCallCheck(this, Endpoint);\n\n    this.parent = parent;\n    this.data = new this.constructor.model(obj, parent.model);\n  }\n\n  _createClass(Endpoint, [{\n    key: 'update',\n    value: function update() {\n      var _this2 = this;\n\n      var changes = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];\n\n      if (!this.id) {\n        throw new Error('cannot update document without id. try calling create');\n      }\n      this.data.merge(changes);\n      var diff = this.data.dirtyValues;\n      return this.constructor.server.put(this.url, diff).then(function (resp) {\n        return _this2.data.merge(resp);\n      }).then(function () {\n        return _this2.data.clearDirtyList();\n      });\n    }\n  }, {\n    key: 'create',\n    value: function create() {\n      var _this3 = this;\n\n      if (!!this.id) {\n        throw new Error('cannot recreate document that already has identifier');\n      }\n      return this.constructor.create(this.data.values).then(function (resp) {\n        return _this3.data.merge(resp);\n      }).then(function () {\n        return _this3.data.clearDirtyList();\n      });\n    }\n  }, {\n    key: 'delete',\n    value: function _delete() {\n      return this.constructor.delete(this.url);\n    }\n  }, {\n    key: 'id',\n    get: function get() {\n      return this.data[primaryIdentifier];\n    }\n  }, {\n    key: 'parentUrl',\n    get: function get() {\n      if (!!this.parent) {\n        return this.parent.url;\n      } else {\n        return this.constructor.path;\n      }\n    }\n  }, {\n    key: 'url',\n    get: function get() {\n      var subRoute = void 0;\n      if (this.constructor.parents) {\n        subRoute = this.constructor.parents.get(this.parent.constructor);\n      }\n      return [this.parentUrl, subRoute, this.id].filter(function (part) {\n        return !!part;\n      }).join('/');\n    }\n  }], [{\n    key: 'find',\n    value: function find() {\n      var query = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];\n\n      if (!!this.parent) {\n        throw new Error('cannot find on nested route');\n      }\n      return this.server.get(this.path).then(buildFromArray.bind(this));\n    }\n  }, {\n    key: 'delete',\n    value: function _delete(url) {\n      return this.server.delete(url);\n    }\n  }, {\n    key: 'findById',\n    value: function findById(id) {\n      if (!!this.parent) {\n        throw new Error('cannot find by id on nested route');\n      }\n      return this.server.get(this.path + '/' + id).then(buildFromObj.bind(this));\n    }\n  }, {\n    key: 'create',\n    value: function create() {\n      var obj = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];\n\n      if (!!this.parent) {\n        throw new Error('cannot create ' + this.name + ' with create method because ' + this.name + ' is a subclass. call create from a parent.');\n      }\n      return this.server.post(this.path, obj).then(buildFromObj.bind(this));\n    }\n\n    // static nest(otherClass, route) {\n    //   route = route || inflection.pluralize(otherClass.name).toLowerCase();\n    //   // parents is a map of the class to its mounted route\n    //   otherClass.parents = otherClass.parents || new Map();\n    //   otherClass.parents.set(this, route);\n\n    //   const pluralName = inflection.pluralize(otherClass.name);\n    //   const singularName = otherClass.name;\n    //   this.prototype[`get${pluralName}`] = function() {\n    //     return this.server.get(`${this.url}/${route}`)\n    //       .then(resArr => buildFromArray.call(otherClass, resArr, this));\n    //   };\n\n    //   this.prototype[`create${singularName}`] = function(obj={}) {\n    //     return this.server.post(`${this.url}/${route}`, obj )\n    //       .then(res => buildFromObj.call(otherClass, res, this))\n    //   }\n    // }\n\n  }]);\n\n  return Endpoint;\n}();\n\nmodule.exports = Endpoint;\nmodule.exports.Schema = require('./schema');"
+    },
+    {
+      "id": 4,
+      "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/model.js",
+      "name": "./model.js",
+      "index": 4,
+      "index2": 2,
+      "size": 6044,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+      "profile": {
+        "factory": 7,
+        "building": 410
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+          "module": "./lib.js",
+          "moduleName": "./lib.js",
+          "type": "cjs require",
+          "userRequest": "./model",
+          "loc": "6:9-27"
+        },
+        {
+          "moduleId": 3,
+          "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/endpoint.js",
+          "module": "./endpoint.js",
+          "moduleName": "./endpoint.js",
+          "type": "cjs require",
+          "userRequest": "./model",
+          "loc": "10:12-30"
+        }
+      ],
+      "source": "'use strict';\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"]) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); } }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar symbols = {\n  paths: Symbol('paths'),\n  dirtyList: Symbol('dirtyList'),\n  parent: Symbol('parent')\n};\n\n/** Private instance methods */\nvar addPath = function addPath(path, schemaPath) {\n  var _this = this;\n\n  var sym = Symbol(path);\n  this[symbols.paths].set(path, sym);\n  Object.defineProperty(this, path, {\n    get: function get() {\n      return _this[sym];\n    }\n  });\n};\n\nvar buildSchema = function buildSchema() {\n  var _iteratorNormalCompletion = true;\n  var _didIteratorError = false;\n  var _iteratorError = undefined;\n\n  try {\n    for (var _iterator = this.constructor.schema[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n      var _step$value = _slicedToArray(_step.value, 2);\n\n      var path = _step$value[0];\n      var schemaPath = _step$value[1];\n\n      addPath.call(this, path, schemaPath);\n    }\n  } catch (err) {\n    _didIteratorError = true;\n    _iteratorError = err;\n  } finally {\n    try {\n      if (!_iteratorNormalCompletion && _iterator.return) {\n        _iterator.return();\n      }\n    } finally {\n      if (_didIteratorError) {\n        throw _iteratorError;\n      }\n    }\n  }\n};\n/** /end private instance methods */\n\nvar Model = function () {\n  function Model(obj, parent) {\n    _classCallCheck(this, Model);\n\n    this[symbols.parent] = parent;\n\n    // this is a private hashmap of strings for a path to their symbols\n    this[symbols.paths] = new Map();\n\n    // set of paths that have changed\n    this[symbols.dirtyList] = new Set();\n\n    buildSchema.call(this);\n    this.merge(obj);\n  }\n\n  _createClass(Model, [{\n    key: 'clearDirtyList',\n    value: function clearDirtyList() {\n      this[symbols.dirtyList].clear();\n    }\n  }, {\n    key: 'merge',\n    value: function merge(changes) {\n      var _this2 = this;\n\n      Object.keys(changes).forEach(function (key) {\n        var change = changes[key];\n        var keySym = _this2[symbols.paths].get(key);\n        if (!keySym) {\n          if (!_this2.constructor.schema.strict) {\n            addPath.call(_this2, key);\n            keySym = _this2[symbols.paths].get(key);\n          } else {\n            return;\n          }\n        }\n        _this2[keySym] = change;\n        _this2[symbols.dirtyList].add(key);\n      });\n      return this;\n    }\n  }, {\n    key: 'reduce',\n    value: function reduce(fn, startingValue) {\n      var _iteratorNormalCompletion2 = true;\n      var _didIteratorError2 = false;\n      var _iteratorError2 = undefined;\n\n      try {\n        for (var _iterator2 = this[symbols.paths][Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {\n          var _step2$value = _slicedToArray(_step2.value, 2);\n\n          var str = _step2$value[0];\n          var sym = _step2$value[1];\n\n          startingValue = fn.call(this, startingValue, str, this[sym]);\n        }\n      } catch (err) {\n        _didIteratorError2 = true;\n        _iteratorError2 = err;\n      } finally {\n        try {\n          if (!_iteratorNormalCompletion2 && _iterator2.return) {\n            _iterator2.return();\n          }\n        } finally {\n          if (_didIteratorError2) {\n            throw _iteratorError2;\n          }\n        }\n      }\n\n      return startingValue;\n    }\n  }, {\n    key: 'values',\n    get: function get() {\n      return Object.assign({}, this.reduce(function (holdOver, key, val) {\n        holdOver[key] = val;\n        return holdOver;\n      }, {}));\n    }\n  }, {\n    key: 'dirtyValues',\n    get: function get() {\n      var obj = {};\n      var _iteratorNormalCompletion3 = true;\n      var _didIteratorError3 = false;\n      var _iteratorError3 = undefined;\n\n      try {\n        for (var _iterator3 = this[symbols.dirtyList][Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {\n          var key = _step3.value;\n\n          obj[key] = this[key];\n        }\n      } catch (err) {\n        _didIteratorError3 = true;\n        _iteratorError3 = err;\n      } finally {\n        try {\n          if (!_iteratorNormalCompletion3 && _iterator3.return) {\n            _iterator3.return();\n          }\n        } finally {\n          if (_didIteratorError3) {\n            throw _iteratorError3;\n          }\n        }\n      }\n\n      return Object.assign({}, obj);\n    }\n  }, {\n    key: 'parentDoc',\n    get: function get() {\n      return this[symbols.parent];\n    }\n  }, {\n    key: 'primaryIdentifier',\n    get: function get() {\n      return this[this.constructor.schema.primary];\n    }\n  }]);\n\n  return Model;\n}();\n\nmodule.exports = Model;"
+    },
+    {
+      "id": 5,
+      "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schema.js",
+      "name": "./schema.js",
+      "index": 5,
+      "index2": 9,
+      "size": 1641,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+      "profile": {
+        "factory": 7,
+        "building": 444
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/lib.js",
+          "module": "./lib.js",
+          "moduleName": "./lib.js",
+          "type": "cjs require",
+          "userRequest": "./schema",
+          "loc": "7:10-29"
+        },
+        {
+          "moduleId": 3,
+          "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/endpoint.js",
+          "module": "./endpoint.js",
+          "moduleName": "./endpoint.js",
+          "type": "cjs require",
+          "userRequest": "./schema",
+          "loc": "157:24-43"
+        }
+      ],
+      "source": "'use strict';\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar SchemaPath = require('./schemaPath');\n\nvar Schema = function () {\n  function Schema() {\n    var _this = this;\n\n    var props = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];\n    var config = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];\n\n    _classCallCheck(this, Schema);\n\n    this.data = new Map();\n    this[Symbol.iterator] = this.data[Symbol.iterator].bind(this.data);\n    Object.keys(props).forEach(function (key) {\n      return _this.set(key, props[key]);\n    });\n    Object.assign(this, config);\n  }\n\n  _createClass(Schema, [{\n    key: 'set',\n    value: function set(key, val) {\n      if (val.primary) {\n        this.primary = key;\n      }\n      this.data.set(key, new SchemaPath(val));\n    }\n  }, {\n    key: 'get',\n    value: function get(key) {\n      return this.data.get(key);\n    }\n  }]);\n\n  return Schema;\n}();\n\nmodule.exports = Schema;"
+    },
+    {
+      "id": 6,
+      "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schemaPath.js",
+      "name": "./schemaPath.js",
+      "index": 6,
+      "index2": 8,
+      "size": 2166,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schema.js",
+      "profile": {
+        "factory": 2,
+        "building": 52
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 5,
+          "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schema.js",
+          "module": "./schema.js",
+          "moduleName": "./schema.js",
+          "type": "cjs require",
+          "userRequest": "./schemaPath",
+          "loc": "7:17-40"
+        }
+      ],
+      "source": "'use strict';\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar validators = require('./validators');\nvar ValidationError = require('./errors/validationError');\n\nvar buildValidators = function buildValidators() {\n  if (!!this.type) {\n    this.validators.push('type');\n  }\n  this.validators = this.validators.map(function (validator) {\n    if (typeof validator === 'string') {\n      return validators[validator];\n    }\n    return validator;\n  }).filter(function (validator) {\n    return !!validator;\n  });\n};\n\nvar SchemaPath = function () {\n  function SchemaPath() {\n    var props = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];\n\n    _classCallCheck(this, SchemaPath);\n\n    Object.assign(this, props);\n    this.validators = this.validators || [];\n    buildValidators.call(this);\n  }\n\n  _createClass(SchemaPath, [{\n    key: 'validate',\n    value: function validate(value) {\n      var _this = this;\n\n      var promises = this.validators.map(function (validator) {\n        return validator.validator(value);\n      });\n\n      return Promise.all(promises).then(function (validationResults) {\n        return validationResults.map(function (result, i) {\n          if (result) {\n            return new ValidationError(_this.validators[i].error(value));\n          }\n        });\n      }).then(function (errors) {\n        return errors.filter(function (err) {\n          return !!err;\n        });\n      });\n    }\n  }]);\n\n  return SchemaPath;\n}();\n\nmodule.exports = SchemaPath;"
+    },
+    {
+      "id": 7,
+      "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/index.js",
+      "name": "./validators/index.js",
+      "index": 7,
+      "index2": 6,
+      "size": 126,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schemaPath.js",
+      "profile": {
+        "factory": 46,
+        "building": 28
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 6,
+          "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schemaPath.js",
+          "module": "./schemaPath.js",
+          "moduleName": "./schemaPath.js",
+          "type": "cjs require",
+          "userRequest": "./validators",
+          "loc": "7:17-40"
+        }
+      ],
+      "source": "'use strict';\n\nexports.email = require('./email');\nexports.required = require('./required');\nexports.type = require('./type');"
+    },
+    {
+      "id": 8,
+      "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/email.js",
+      "name": "./validators/email.js",
+      "index": 8,
+      "index2": 3,
+      "size": 200,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/index.js",
+      "profile": {
+        "factory": 9,
+        "building": 9
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 7,
+          "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/index.js",
+          "module": "./validators/index.js",
+          "moduleName": "./validators/index.js",
+          "type": "cjs require",
+          "userRequest": "./email",
+          "loc": "3:16-34"
+        }
+      ],
+      "source": "'use strict';\n\nmodule.exports.validator = function (val) {\n  var regex = /\\S+@\\S+\\.\\S+/;\n  return regex.test(val);\n};\n\nmodule.exports.error = function (v) {\n  return v + ' is not an email address';\n};"
+    },
+    {
+      "id": 9,
+      "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/required.js",
+      "name": "./validators/required.js",
+      "index": 9,
+      "index2": 4,
+      "size": 189,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/index.js",
+      "profile": {
+        "factory": 9,
+        "building": 16
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 7,
+          "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/index.js",
+          "module": "./validators/index.js",
+          "moduleName": "./validators/index.js",
+          "type": "cjs require",
+          "userRequest": "./required",
+          "loc": "4:19-40"
+        }
+      ],
+      "source": "'use strict';\n\nmodule.exports.validator = function (value) {\n  return !undefined.required || !!value;\n};\n\nmodule.exports.error = function () {\n  return 'Value is required for this path';\n};"
+    },
+    {
+      "id": 10,
+      "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/type.js",
+      "name": "./validators/type.js",
+      "index": 10,
+      "index2": 5,
+      "size": 212,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/index.js",
+      "profile": {
+        "factory": 10,
+        "building": 23
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 7,
+          "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/validators/index.js",
+          "module": "./validators/index.js",
+          "moduleName": "./validators/index.js",
+          "type": "cjs require",
+          "userRequest": "./type",
+          "loc": "5:15-32"
+        }
+      ],
+      "source": "'use strict';\n\nmodule.exports.validator = function (value) {\n  return !!value && value.constructor === undefined.type;\n};\n\nmodule.exports.error = function (val) {\n  return val + ' does not match correct type';\n};"
+    },
+    {
+      "id": 11,
+      "identifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/errors/validationError.js",
+      "name": "./errors/validationError.js",
+      "index": 11,
+      "index2": 7,
+      "size": 1248,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schemaPath.js",
+      "profile": {
+        "factory": 46,
+        "building": 22
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 6,
+          "moduleIdentifier": "/Users/zekenierenberg/pks-server/node_modules/babel-loader/index.js?{\"presets\":[\"es2016\"]}!/Users/zekenierenberg/pks-server/rest-client/schemaPath.js",
+          "module": "./schemaPath.js",
+          "moduleName": "./schemaPath.js",
+          "type": "cjs require",
+          "userRequest": "./errors/validationError",
+          "loc": "8:22-57"
+        }
+      ],
+      "source": "\"use strict\";\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar ValidationError = function (_Error) {\n  _inherits(ValidationError, _Error);\n\n  function ValidationError() {\n    _classCallCheck(this, ValidationError);\n\n    return _possibleConstructorReturn(this, Object.getPrototypeOf(ValidationError).apply(this, arguments));\n  }\n\n  return ValidationError;\n}(Error);\n\nmodule.exports = ValidationError;"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}

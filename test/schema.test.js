@@ -7,7 +7,6 @@ describe('schema', () => {
   beforeEach(() => schema = new Schema());
 
   describe('constructor', () => {
-    it('is a map', () => assert(schema instanceof Map));
 
     it('makes schema paths with what is passed', () => {
       schema = new Schema({ foo: { type: String } });
