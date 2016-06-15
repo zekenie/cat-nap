@@ -14,7 +14,7 @@ const server = new Server('http://localhost:4001');
 
 const Model = require('./model');
 class Problem  extends Model {
-  
+
 };
 
 const Schema = require('./schema');
@@ -38,15 +38,16 @@ ProblemEndpoint.path = '/api/problems';
 
 server.post('/api/sessions', { email: 'email@email.com', password: 'this is a test'})
   .then(jwt => {
-    console.log(jwt);
-    server.config({ headers: { Authorization: jwt} })
+    server.config({ headers: { Authorization: jwt.token} })
   })
   .then(() => {
     return ProblemEndpoint.create({
       title: 'foobar'
     })
   })
-  .then(console.log).catch(console.error);
+  .then((doc) => console.log(doc.title))
+  // .then(console.log)
+  .catch(console.error);
 
 // Problem.findById(1)
 //   .then(cohort => console.log(cohort.json))

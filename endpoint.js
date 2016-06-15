@@ -21,6 +21,14 @@ class Endpoint {
   constructor(obj, parent={}) {
     this.parent = parent;
     this.data = new this.constructor.model(obj, parent.model);
+    return new Proxy(this, {
+      get: (target, property) => {
+        if(target[property]) {
+          return target[property];
+        }
+        return target.data[property];
+      }
+    });
   }
 
   get id() {
