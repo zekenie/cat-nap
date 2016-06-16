@@ -32,7 +32,7 @@ class Endpoint {
   }
 
   get id() {
-    return this.data[primaryIdentifier];
+    return this.data[this.data.primaryIdentifier];
   }
 
   get parentUrl() {
