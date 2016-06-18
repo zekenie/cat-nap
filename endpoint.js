@@ -31,6 +31,29 @@ class Endpoint {
     });
   }
 
+  // this establishes stable interface
+  getRelated(params={}) {
+    return Promise.props(params);
+  }
+
+  getAllRelated(predicate, allReferences={}, n=0) {
+    predicate = predicate || function() { return true; }
+    return new Promise((resolve, reject) => {
+      if(!predicate(this,n)) { resolve(); }
+      this.getRelated()
+        .then(related => {
+          Object.assign(allReferences, related);
+          return Promise.map(Object.keys(related), key => {
+            return Promise.map(related[key], doc => {
+              return doc.getAllRelated(predicate, allReferences, n+1)
+            });
+          })
+          .then(() => resolve(allReferences))
+          .catch(reject);
+        });
+    });
+  }
+
   get id() {
     return this.data[this.data.primaryIdentifier];
   }
@@ -78,7 +101,7 @@ class Endpoint {
     if(!!this.parent) {
       throw new Error(`cannot find on nested route`);
     }
-    return this.server.get(this.path)
+    return this.server.get(this.path, query)
       .then(buildFromArray.bind(this));
   }
 

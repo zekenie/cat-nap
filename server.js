@@ -13,20 +13,24 @@ class Server {
     requester.config(obj);
   }
 
-  get(subPath) {
-    return requester.get(this.base + subPath);
+  get(subPath, query, options={}) {
+    options.query = query;
+    return requester.get(this.base + subPath, options);
   }
 
-  delete(subPath) {
-    return requester.delete(base + subPath);
+  delete(subPath, query, options={}) {
+    options.query = query;
+    return requester.delete(base + subPath, options);
   }
 
-  post(subPath, body) {
-    return requester.post(this.base + subPath, { body });
+  post(subPath, body, options={}) {
+    options.body = body;
+    return requester.post(this.base + subPath, options);
   }
 
-  put(subPath, body) {
-    return requester.put(base + subPath, { body });
+  put(subPath, body, options={}) {
+    options.body = body;
+    return requester.put(base + subPath, options);
   }
 }
 
